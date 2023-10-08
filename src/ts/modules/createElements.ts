@@ -86,3 +86,9 @@ export const createForm = (): HTMLFormElement => {
   form.append(label, submitBtn, resetBtn);
   return form;
 }
+
+
+// todo table
+// table
+// thead
+// tbody
