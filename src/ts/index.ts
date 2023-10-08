@@ -3,16 +3,16 @@ import { TITLE } from "./consts.js";
 import { renderApp } from "./modules/render.js";
 import { getRandomId } from "./modules/util.js";
 
-//? константы
 
+//? константы
 console.log('hello %c\"' + TITLE + '\"', "color:lawngreen");
 
 
-// ?
-(document.querySelector('title') as HTMLElement).textContent = `${TITLE}-${getRandomId()}`;
+// ? title
+(document.querySelector('title') as HTMLElement).textContent = `${TITLE}`;
 
-// const app: HTMLElement = (document.getElementById('app') as HTMLElement);
 
+// ? application render
 renderApp({
   app: (document.getElementById('app') as HTMLElement),
   appTitle: TITLE,

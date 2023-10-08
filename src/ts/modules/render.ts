@@ -12,27 +12,24 @@ export const renderApp = ({
   console.log('рендер', app);
 
   // заголовок
-  const title: HTMLElement = createTitle(appTitle);
-  console.log('title appTitle: ', title);
-  app?.append(title);
+  const title: HTMLElement = createTitle(appTitle) as HTMLTitleElement;
+  console.log('page__title appTitle: ', title);
+  // app?.append(title);
   
   
   // форма ввода заданий
-  const form: HTMLElement = createForm();
-  app?.append(form);
+  const form: HTMLFormElement = createForm() as HTMLFormElement;
+  // app.append(form);
 
   
   // таблица заданий
 
 
-  // todo
-  // try buttons
   const simpleBtn: HTMLButtonElement = createButton({
-    className: 'btn btn-outline-warning btn-sm mb-1',
+    className: 'btn btn-outline-success btn-sm mb-1',
     textContent: 'Finish',
     title: 'Завершение задания',
   });
-  app.append(simpleBtn);
 
   const submitBtn: HTMLButtonElement = createButton({
     type: 'submit',
@@ -40,13 +37,14 @@ export const renderApp = ({
     title: 'Сохранить',
     textContent: 'Сохранить',
   });
-  app.append(submitBtn);
 
   const resetBtn: HTMLButtonElement = createButton({
     type: 'reset',
-    className: 'btn btn-outline-danger',
+    className: 'btn btn-outline-danger mb-2',
   }, 'Очистить');
-  app.append(resetBtn);
+
+  // app.append(resetBtn, submitBtn, simpleBtn);
 
 
+  app.append(title, form,);
 }

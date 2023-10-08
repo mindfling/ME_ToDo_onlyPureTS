@@ -11,8 +11,8 @@ export const createElement = (tag: string, param: {} = {}, text?: string): HTMLE
 
 // * Заголовок 
 export const createTitle = (title: string): HTMLElement => {
-  return createElement('h2', {
-    className: 'app-title mb-3',
+  return createElement('h1', {
+    className: 'page__title app-title mb-4',
     textContent: title,
   });
 }
@@ -49,10 +49,40 @@ text?: string): HTMLButtonElement => {
 
 
 // * форма ввода задания
-export const createForm = (): HTMLElement => {
-  return createElement('form', {
-    className: 'form',
+export const createForm = (): HTMLFormElement => {
+  const form: HTMLFormElement = createElement('form', {
+    className: 'form d-flex align-items-center mb-3',
     name: 'taskForm',
-    
-  })
+  }) as HTMLFormElement;
+
+  // todo перенести в render
+  // поле ввода задания
+  const label = createElement('label', {
+    className: 'form-group me-3',
+  }) as HTMLInputElement;
+  const inputTask = createElement('input', {
+    type: 'text',
+    className: 'form-control',
+    placeholder: 'Введите задачу',
+    name: 'taskTitle',
+  }) as HTMLInputElement;
+  label.append(inputTask);
+
+  // кнопка ввода
+  const submitBtn: HTMLButtonElement = createButton({
+    type: 'submit',
+    className: 'btn btn-outline-primary me-2',
+    title: 'Сохранить',
+    textContent: 'Сохранить',
+  });
+
+  // кнопка очистки
+  const resetBtn: HTMLButtonElement = createButton({
+    type: 'reset',
+    className: 'btn btn-outline-warning',
+  }, 'Очистить');
+
+
+  form.append(label, submitBtn, resetBtn);
+  return form;
 }
