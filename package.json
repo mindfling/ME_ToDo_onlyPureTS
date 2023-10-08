@@ -1,0 +1,15 @@
+{
+  "name": "ts_simple_diploma_draft",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc -w",
+    "list": "ls -lash",
+    "test": "node ./dist/index.js"
+  },
+  "keywords": ["TypeScript", "Diploma", "Todo App", "ToDoWka"],
+  "author": "Dim MindFling",
+  "license": "ISC"
+}
